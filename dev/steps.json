@@ -1,0 +1,268 @@
+[
+ {
+  "shot": "01-title"
+ },
+ {
+  "key": "ArrowDown",
+  "code": "ArrowDown",
+  "vk": 40
+ },
+ {
+  "key": "ArrowUp",
+  "code": "ArrowUp",
+  "vk": 38
+ },
+ {
+  "shot": "02-title-sel"
+ },
+ {
+  "key": "Enter",
+  "code": "Enter",
+  "vk": 13
+ },
+ {
+  "shot": "03-classselect"
+ },
+ {
+  "key": "ArrowRight",
+  "code": "ArrowRight",
+  "vk": 39
+ },
+ {
+  "shot": "04-class-sel"
+ },
+ {
+  "key": "Enter",
+  "code": "Enter",
+  "vk": 13
+ },
+ {
+  "wait": 600
+ },
+ {
+  "shot": "05-game"
+ },
+ {
+  "key": "x",
+  "code": "KeyX",
+  "vk": 88
+ },
+ {
+  "wait": 2500
+ },
+ {
+  "shot": "06-explored"
+ },
+ {
+  "key": "i",
+  "code": "KeyI",
+  "vk": 73
+ },
+ {
+  "shot": "07-inventory"
+ },
+ {
+  "eval": "window.RL.UI.invSel=1;"
+ },
+ {
+  "shot": "08-inventory-sel"
+ },
+ {
+  "key": "Escape",
+  "code": "Escape",
+  "vk": 27
+ },
+ {
+  "key": "c",
+  "code": "KeyC",
+  "vk": 67
+ },
+ {
+  "shot": "09-char"
+ },
+ {
+  "key": "Escape",
+  "code": "Escape",
+  "vk": 27
+ },
+ {
+  "key": "?",
+  "code": "Slash",
+  "vk": 191
+ },
+ {
+  "shot": "10-help"
+ },
+ {
+  "key": "Escape",
+  "code": "Escape",
+  "vk": 27
+ },
+ {
+  "key": "m",
+  "code": "KeyM",
+  "vk": 77
+ },
+ {
+  "shot": "11-map"
+ },
+ {
+  "key": "Escape",
+  "code": "Escape",
+  "vk": 27
+ },
+ {
+  "eval": "window.RL.enterLevel(10);window.RL.revealAll();"
+ },
+ {
+  "wait": 400
+ },
+ {
+  "shot": "12-depth10"
+ },
+ {
+  "eval": "window.RL.enterLevel(15);window.RL.revealAll();"
+ },
+ {
+  "wait": 400
+ },
+ {
+  "shot": "13-boss"
+ },
+ {
+  "eval": "var p=window.RL.G.player;p.eq.amulet=null;window.RL.damage(p,9999,null,'phys',{cause:'测试'});"
+ },
+ {
+  "wait": 300
+ },
+ {
+  "shot": "14-death"
+ },
+ {
+  "key": "Enter",
+  "code": "Enter",
+  "vk": 13
+ },
+ {
+  "wait": 300
+ },
+ {
+  "eval": "window.RL.startRun('mage',42);window.RL.G.player.inv.length=0;['potion:heal','scroll:identify','wand:fire','weapon:greatsword','armor:plate','ring:str','food:ration','gem:gem','potion:str'].forEach(function(k){var a=k.split(':');window.RL.addToInv(window.RL.mkItem(a[0],a[1]))});window.RL.enterLevel(4);window.RL.revealAll();window.RL.handleKey({key:'i',code:'KeyI'});"
+ },
+ {
+  "wait": 400
+ },
+ {
+  "shot": "15-inventory-full"
+ },
+ {
+  "key": "Escape",
+  "code": "Escape",
+  "vk": 27
+ },
+ {
+  "eval": "window.RL.startRun('ranger',9);window.RL.G.player.lvl=12;window.RL.gainXP(0);window.RL.G.mode='perk';window.RL.G.perkOffer=window.RL.PERKS.slice(0,3);"
+ },
+ {
+  "wait": 300
+ },
+ {
+  "shot": "16-perk"
+ },
+ {
+  "eval": "window.RL.handleKey({key:'2',code:'Digit2'});window.RL.winRun();"
+ },
+ {
+  "wait": 300
+ },
+ {
+  "shot": "17-win"
+ },
+ {
+  "eval": "window.RL.G=null;window.RL.UI.mode2='codex';window.RL.META.codex.rat=1;window.RL.META.know['potion:heal']=1;window.RL.META.know['scroll:identify']=1;"
+ },
+ {
+  "wait": 300
+ },
+ {
+  "shot": "18-codex"
+ },
+ {
+  "eval": "window.RL.UI.mode2=null;window.RL.UI.touch=true;"
+ },
+ {
+  "wait": 300
+ },
+ {
+  "shot": "19-title-final"
+ },
+ {
+  "eval": "window.RL.G=null;window.RL.UI.mode2=null;window.RL.UI.title=0;",
+  "size": [
+   900,
+   700
+  ]
+ },
+ {
+  "eval": "window.RL.startRun('warrior',3);window.RL.revealAll();window.RL.enterLevel(6);window.RL.revealAll();",
+  "wait": 500
+ },
+ {
+  "shot": "20-narrow"
+ },
+ {
+  "size": [
+   430,
+   820
+  ]
+ },
+ {
+  "wait": 400
+ },
+ {
+  "shot": "21-mobile"
+ },
+ {
+  "eval": "window.RL.UI.touch=true;window.RL.startRun('rogue',5);",
+  "wait": 400
+ },
+ {
+  "shot": "22-mobile-game"
+ },
+ {
+  "size": [
+   1920,
+   1080
+  ]
+ },
+ {
+  "wait": 300
+ },
+ {
+  "shot": "23-wide"
+ },
+ {
+  "eval": "window.RL.LAY.touch=true;window.RL.UI.touch=true;window.RL.startRun('ranger',11);window.RL.enterLevel(3);window.RL.revealAll();",
+  "wait": 500
+ },
+ {
+  "shot": "24-mobile-pad"
+ },
+ {
+  "size": [
+   1440,
+   900
+  ]
+ },
+ {
+  "eval": "window.RL.LAY.touch=false;",
+  "wait": 200
+ },
+ {
+  "eval": "window.RL.G=null;window.RL.UI.mode2='codex';",
+  "wait": 300
+ },
+ {
+  "shot": "25-codex2"
+ }
+]
