@@ -3,9 +3,9 @@ const {spawn}=require("child_process");
 const fs=require("fs"),path=require("path"),http=require("http");
 const CHROME="C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 const PORT=9411+Math.floor(Math.random()*80);
-const OUT=path.join(__dirname,"shots");
+const OUT=path.join(__dirname,process.env.SHOTS_DIR||"shots");
 fs.mkdirSync(OUT,{recursive:true});
-const url="file:///"+path.resolve(__dirname,"..","index.html").replace(/\\/g,"/");
+const url=process.env.GAME_URL||("file:///"+path.resolve(__dirname,"..","index.html").replace(/\\/g,"/"));
 const proc=spawn(CHROME,["--headless=new","--disable-gpu","--no-first-run","--no-default-browser-check",
   "--remote-debugging-port="+PORT,"--user-data-dir="+path.join(require("os").tmpdir(),"cdpprof"+PORT),
   "--window-size=1440,900","--hide-scrollbars","about:blank"],{stdio:"ignore"});
@@ -42,11 +42,11 @@ async function main(){
       errors.push((d.exception&&d.exception.description)||d.text);
     }
     if(m.method==="Runtime.consoleAPICalled"&&m.params.type==="error")errors.push(JSON.stringify(m.params.args.map(a=>a.value)));
-    if(m.method==="Log.entryAdded"&&m.params.entry.level==="error")errors.push(m.params.entry.text);
+    if(m.method==="Log.entryAdded"&&m.params.entry.level==="error")errors.push(m.params.entry.text+" @"+(m.params.entry.url||""));
   };
   await send("Page.enable");await send("Runtime.enable");await send("Log.enable");
   await send("Emulation.setDeviceMetricsOverride",{width:1440,height:900,deviceScaleFactor:1,mobile:false});
-  const nav=url+(process.argv[2]?"?"+process.argv[2]:"");
+  const nav=url+((process.env.GAME_QS)?(url.indexOf("?")<0?"?":"&")+process.env.GAME_QS:"");
   await send("Page.navigate",{url:nav});
   await sleep(1200);
   async function shot(name){
