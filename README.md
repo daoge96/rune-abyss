@@ -9,6 +9,18 @@
 
 ---
 
+## 截图
+
+| 标题 | 深渊第 10 层（熔火矿坑） | 背包与装备 |
+| --- | --- | --- |
+| ![](screenshots/title.png) | ![](screenshots/depth10.png) | ![](screenshots/inventory.png) |
+
+| 手机竖屏（虚拟手柄） | 升级天赋三选一 | 死亡结算 |
+| --- | --- | --- |
+| ![](screenshots/mobile.png) | ![](screenshots/perk.png) | ![](screenshots/death.png) |
+
+---
+
 ## 怎么玩
 
 | 按键 | 作用 |
